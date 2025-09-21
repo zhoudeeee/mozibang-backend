@@ -11,12 +11,12 @@ export default async function handler(req, res) {
     if (!order) return res.status(400).json({ code: 400, message: 'Missing order' }));
 
     const auth = orders.get(order);
-    if (!auth) return res.json({ code: 404 });
+    if (!auth) return res.json({ code: 404 }));
 
     orders.delete(order);   // 一次性
-    return res.json({ code: 200, auth });
+    return res.json({ code: 200, auth }));
   } catch (e) {
     console.error('💥 check crash:', e);
-    return res.status(500).json({ code: 500, message: e.message });
+    return res.status(500).json({ code: 500, message: e.message }));
   }
 }
